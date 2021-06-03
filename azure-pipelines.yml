@@ -10,12 +10,6 @@ pool:
   vmImage: ubuntu-latest
 strategy:
   matrix:
-    Python27:
-      python.version: '2.7'
-    Python35:
-      python.version: '3.5'
-    Python36:
-      python.version: '3.6'
     Python37:
       python.version: '3.7'
 
@@ -33,5 +27,5 @@ steps:
   displayName: 'Install dependencies'
 
 - script: |
-    python src\covid-vaccine-slot-booking.py --mobile=6305318035
+    python $(System.DefaultWorkingDirectory)/src/covid-vaccine-slot-booking.py --mobile=6305318035
   displayName: 'slot'
